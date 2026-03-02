@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>J. Krishna Priya | AI Portfolio</title>
-
 <style>
+
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
 font-family:'Segoe UI',sans-serif;
@@ -50,7 +50,9 @@ font-weight:bold;
 nav a:hover{text-shadow:0 0 10px #00f7ff;}
 
 /* Header */
+    
 header{
+
 height:100vh;
 display:flex;
 flex-direction:column;
@@ -70,8 +72,6 @@ height:170px;
 border-radius:50%;
 object-fit:cover;
 animation:float 4s ease-in-out infinite;
-border:3px solid #00f7ff;
-box-shadow:0 0 20px #00f7ff;
 }
 
 .profile-container::before{
@@ -157,7 +157,10 @@ margin-top:10px;
 }
 button:hover{box-shadow:0 0 20px #00f7ff;}
 
-.social{margin-top:15px;}
+/* Social Icons */
+.social{
+margin-top:15px;
+}
 .social a{
 margin:0 10px;
 color:#00f7ff;
@@ -165,18 +168,29 @@ font-size:1.5rem;
 text-decoration:none;
 transition:0.3s;
 }
-.social a:hover{text-shadow:0 0 15px #00f7ff;}
+.social a:hover{
+text-shadow:0 0 15px #00f7ff;
+}
 
+/* Footer */
 footer{
 text-align:center;
 padding:20px;
 background:#0f0f15;
 }
+    .profile-container img{
+width:170px;
+height:170px;
+border-radius:50%;
+object-fit:cover;
+animation:float 4s ease-in-out infinite;
+border:3px solid #00f7ff;
+box-shadow:0 0 20px #00f7ff;
+}
 </style>
 </head>
 
 <body>
-
 <nav>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
@@ -185,8 +199,8 @@ background:#0f0f15;
 </nav>
 
 <header>
-<div class="profile-container">
-<img src="profile.jpg" alt="J. Krishna Priya">
+ <div class="profile-container">
+    <img src="profile.jpg" alt="J. Krishna Priya">
 </div>
 
 <h1>J. Krishna Priya</h1>
@@ -194,15 +208,81 @@ background:#0f0f15;
 
 <div class="social">
 <a href="https://github.com/Krishna141203" target="_blank">💻</a>
-<a href="https://www.linkedin.com/in/krishna-priya-66384a341" target="_blank">🔗</a>
-<a href="mailto:krishnapriya74929@gmail.com">📧</a>
+<a href="https://www.linkedin.com/in/www.linkedin.com/in/krishna-priya-66384a341" target="_blank">🔗</a>
+<a href="mailto:exp.@gmail.com">📧</a>
 </div>
+
 </header>
 
-<!-- Rest of your sections remain same -->
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+    I am an Artificial Intelligence & Data Science student driven by curiosity and problem-solving. I enjoy analyzing data, understanding patterns, and transforming raw information into meaningful insights.
+    I aspire to build intelligent systems that are not just technically sound, but impactful in solving real-world problems.
+
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skill">
+<p>Python</p>
+<div class="bar"><div data-width="90%"></div></div>
+</div>
+
+<div class="skill">
+<p>Java</p>
+<div class="bar"><div data-width="80%"></div></div>
+</div>
+
+<div class="skill">
+<p>SQL</p>
+<div class="bar"><div data-width="85%"></div></div>
+</div>
+
+<div class="skill">
+<p>Git</p>
+<div class="bar"><div data-width="75%"></div></div>
+</div>
+
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="card">
+<b>PCA using WEKA</b><br><br>
+(Mini Project – Data Warehousing & Data Mining)
+
+Implemented Principal Component Analysis (PCA) on a dataset using WEKA to reduce dimensionality and identify significant attributes contributing to data variance. Analyzed feature importance and interpreted results to understand dimensionality reduction techniques in Data Mining.
+</div>
+
+<div class="card">
+<b>Community Service Project</b><br><br>
+Actively participated in a community engagement initiative focused on social awareness and real-world problem understanding. Collaborated with team members to analyze community challenges and propose practical solutions, enhancing leadership and communication skills.
+</div>
+<div class="card">
+<b>current focus</b><br><br>
+Currently exploring advanced Machine Learning concepts, dimensionality reduction techniques, and the practical applications of Artificial Intelligence in real-world problem solving. Interested in developing intelligent, data-driven solutions and expanding knowledge in Generative AI technologies.
+</div>
+<button onclick="window.open('#')">Download Resume</button>
+
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+Email: krishnapriya74929@gmail.com
+</div>
+</section>
+
+<footer>
+© 2026 J. Krishna Priya | AI Portfolio
+</footer>
 
 <script>
-const text=["AI Engineer in Progress 🚀","Engineering Intelligence from Information 🤖","Analyzing Data. Extracting Insight ✨"];
+const text=["AI Engineer in Progress 🚀","Engineering Intelligence from Information🤖","Analyzing Data. Extracting Insight✨"];
 let i=0,j=0,current="",isDeleting=false;
 function type(){
 current=text[i];
@@ -216,6 +296,19 @@ if(j==0){isDeleting=false;i=(i+1)%text.length;}
 setTimeout(type,80);
 }
 type();
+
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+document.querySelectorAll(".bar div").forEach(bar=>{
+bar.style.width=bar.dataset.width;
+});
+});
+
 </script>
 
 </body>
