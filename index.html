@@ -1,65 +1,306 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Krishna | AI Portfolio</title>
-    <style>
-        body {
-            font-family: Arial;
-            margin: 40px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        section {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J. Krishna Priya | AI Portfolio</title>
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Segoe UI',sans-serif;
+background:#0a0a0f;
+color:#fff;
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
+/* Animated grid background */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle,#00f7ff22 1px,transparent 1px);
+background-size:40px 40px;
+animation:moveBg 20s linear infinite;
+z-index:-1;
+}
+@keyframes moveBg{
+0%{transform:translate(0,0);}
+100%{transform:translate(-200px,-200px);}
+}
+
+/* Navbar */
+nav{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+padding:15px;
+text-align:center;
+z-index:1000;
+}
+nav a{
+color:#00f7ff;
+margin:0 20px;
+text-decoration:none;
+font-weight:bold;
+}
+nav a:hover{text-shadow:0 0 10px #00f7ff;}
+
+/* Header */
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.profile-container{
+position:relative;
+margin-bottom:20px;
+}
+
+.profile-container img{
+width:170px;
+height:170px;
+border-radius:50%;
+object-fit:cover;
+animation:float 4s ease-in-out infinite;
+}
+
+.profile-container::before{
+content:"";
+position:absolute;
+top:-10px;left:-10px;
+right:-10px;bottom:-10px;
+border-radius:50%;
+border:3px solid #00f7ff;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{box-shadow:0 0 10px #00f7ff;}
+to{box-shadow:0 0 30px #00f7ff;}
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+header h1{font-size:2.5rem;}
+
+.typing{
+color:#00f7ff;
+font-size:1.3rem;
+margin-top:10px;
+height:30px;
+}
+
+/* Sections */
+section{
+padding:100px 10%;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+h2{color:#00f7ff;margin-bottom:30px;}
+
+.card{
+background:#14141c;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+transition:0.4s;
+}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px #00f7ff;
+}
+
+/* Skills */
+.skill{margin-bottom:15px;}
+.bar{
+height:8px;
+background:#222;
+border-radius:10px;
+overflow:hidden;
+}
+.bar div{
+height:100%;
+background:#00f7ff;
+width:0;
+transition:2s;
+}
+
+/* Buttons */
+button{
+padding:10px 20px;
+border:none;
+background:#00f7ff;
+color:#000;
+font-weight:bold;
+border-radius:25px;
+cursor:pointer;
+margin-top:10px;
+}
+button:hover{box-shadow:0 0 20px #00f7ff;}
+
+/* Social Icons */
+.social{
+margin-top:15px;
+}
+.social a{
+margin:0 10px;
+color:#00f7ff;
+font-size:1.5rem;
+text-decoration:none;
+transition:0.3s;
+}
+.social a:hover{
+text-shadow:0 0 15px #00f7ff;
+}
+
+/* Footer */
+footer{
+text-align:center;
+padding:20px;
+background:#0f0f15;
+}
+</style>
 </head>
+
 <body>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<h1>Hi, I'm Krishna 👋</h1>
-<p>B.Tech – Artificial Intelligence & Data Science</p>
+<header>
 
-<section>
+<div class="profile-container">
+<img src="https://via.placeholder.com/170" alt="Profile Photo">
+</div>
+
+<h1>J. Krishna Priya</h1>
+<div class="typing" id="typing"></div>
+
+<div class="social">
+<a href="https://github.com/Krishna141203" target="_blank">💻</a>
+<a href="https://www.linkedin.com/in/www.linkedin.com/in/krishna-priya-66384a341" target="_blank">🔗</a>
+<a href="mailto:exp.@gmail.com">📧</a>
+</div>
+
+</header>
+
+<section id="about">
 <h2>About Me</h2>
-<p>
-I am an AI & Data Science student passionate about Machine Learning,
-Deep Learning, NLP and Generative AI. I enjoy building intelligent systems
-that solve real-world problems.
-</p>
+<div class="card">
+    I am an Artificial Intelligence & Data Science student driven by curiosity and problem-solving. I enjoy analyzing data, understanding patterns, and transforming raw information into meaningful insights.
+    I aspire to build intelligent systems that are not just technically sound, but impactful in solving real-world problems.
+
+</div>
 </section>
 
-<section>
+<section id="skills">
 <h2>Skills</h2>
-<ul>
-<li>Python</li>
-<li>Machine Learning</li>
-<li>Deep Learning</li>
-<li>NLP</li>
-<li>Generative AI</li>
-<li>PySpark</li>
-<li>Git & GitHub</li>
-</ul>
+
+<div class="skill">
+<p>Python</p>
+<div class="bar"><div data-width="90%"></div></div>
+</div>
+
+<div class="skill">
+<p>Java</p>
+<div class="bar"><div data-width="80%"></div></div>
+</div>
+
+<div class="skill">
+<p>SQL</p>
+<div class="bar"><div data-width="85%"></div></div>
+</div>
+
+<div class="skill">
+<p>Git</p>
+<div class="bar"><div data-width="75%"></div></div>
+</div>
+
 </section>
 
-<section>
+<section id="projects">
 <h2>Projects</h2>
-<ul>
-<li><b>Sales Data Analysis:</b> Analyzed business data using Python.</li>
-<li><b>NLP POS Tagger:</b> Implemented tagging using transformation-based learning.</li>
-<li><b>AI Study Assistant (Concept):</b> Exploring Gen AI applications.</li>
-</ul>
+
+<div class="card">
+<b>PCA using WEKA</b><br><br>
+(Mini Project – Data Warehousing & Data Mining)
+
+Implemented Principal Component Analysis (PCA) on a dataset using WEKA to reduce dimensionality and identify significant attributes contributing to data variance. Analyzed feature importance and interpreted results to understand dimensionality reduction techniques in Data Mining.
+</div>
+
+<div class="card">
+<b>Community Service Project</b><br><br>
+Actively participated in a community engagement initiative focused on social awareness and real-world problem understanding. Collaborated with team members to analyze community challenges and propose practical solutions, enhancing leadership and communication skills.
+</div>
+<div class="card">
+<b>current focus</b><br><br>
+Currently exploring advanced Machine Learning concepts, dimensionality reduction techniques, and the practical applications of Artificial Intelligence in real-world problem solving. Interested in developing intelligent, data-driven solutions and expanding knowledge in Generative AI technologies.
+</div>
+<button onclick="window.open('#')">Download Resume</button>
+
 </section>
 
-<section>
+<section id="contact">
 <h2>Contact</h2>
-<p>Email: your-email@gmail.com</p>
-<p>GitHub: https://github.com/krishna141203</p>
+<div class="card">
+Email: krishnapriya74929@gmail.com
+</div>
 </section>
+
+<footer>
+© 2026 J. Krishna Priya | AI Portfolio
+</footer>
+
+<script>
+const text=["AI Engineer in Progress 🚀","Engineering Intelligence from Information🤖","Analyzing Data. Extracting Insight✨"];
+let i=0,j=0,current="",isDeleting=false;
+function type(){
+current=text[i];
+if(!isDeleting){
+document.getElementById("typing").textContent=current.substring(0,j++);
+if(j>current.length){isDeleting=true;setTimeout(type,1000);return;}
+}else{
+document.getElementById("typing").textContent=current.substring(0,j--);
+if(j==0){isDeleting=false;i=(i+1)%text.length;}
+}
+setTimeout(type,80);
+}
+type();
+
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+document.querySelectorAll(".bar div").forEach(bar=>{
+bar.style.width=bar.dataset.width;
+});
+});
+
+</script>
 
 </body>
 </html>
