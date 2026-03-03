@@ -94,18 +94,31 @@ to{box-shadow:0 0 30px #00f7ff;}
 50%{transform:translateY(-10px);}
 }
 header h1{
-font-size:3rem;
+font-size:2.8rem;
 font-weight:bold;
-background:linear-gradient(90deg,#00f7ff,#ff00ff,#00f7ff);
-background-size:200%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:gradientMove 4s linear infinite;
+color:#00f7ff;
+text-shadow:
+0 0 5px #00f7ff,
+0 0 10px #00f7ff,
+0 0 20px #00f7ff,
+0 0 40px #00f7ff;
+animation:neonPulse 2s infinite alternate;
 }
 
-@keyframes gradientMove{
-0%{background-position:0%;}
-100%{background-position:200%;}
+@keyframes neonPulse{
+from{
+text-shadow:
+0 0 5px #00f7ff,
+0 0 10px #00f7ff,
+0 0 20px #00f7ff;
+}
+to{
+text-shadow:
+0 0 10px #00f7ff,
+0 0 20px #00f7ff,
+0 0 40px #00f7ff,
+0 0 80px #00f7ff;
+}
 }
 .typing{
 color:#00f7ff;
@@ -207,6 +220,7 @@ box-shadow:0 0 20px #00f7ff;
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
+    <a href="#education">Education</a>
 </nav>
 
 <header>
@@ -232,6 +246,31 @@ box-shadow:0 0 20px #00f7ff;
     I aspire to build intelligent systems that are not just technically sound, but impactful in solving real-world problems.
 
 </div>
+    <section id="education">
+<h2>Academic Background</h2>
+
+<div class="card">
+<b>B.Tech – Artificial Intelligence & Data Science</b><br><br>
+Annamacharya Institute of Technology & Science (AITS)<br>
+3rd Year (2023 – 2027)<br>
+Focused on Machine Learning, Data Mining, and AI Systems.
+</div>
+
+<div class="card">
+<b>Intermediate (12th Grade)</b><br><br>
+[Your College Name]<br>
+Year: 2021 – 2023<br>
+Stream: MPC
+</div>
+
+<div class="card">
+<b>SSC (10th Grade)</b><br><br>
+[Your School Name]<br>
+Year: 2020 – 2021
+</div>
+
+</section>
+
 </section>
 
 <section id="skills">
@@ -293,7 +332,7 @@ Email: krishnapriya74929@gmail.com
 </footer>
 
 <script>
-const text=["AI Engineer in Progress 🚀","Engineering Intelligence from Information🤖","Analyzing Data. Extracting Insight✨"];
+const text=["AI Engineer in Progress "];
 let i=0,j=0,current="",isDeleting=false;
 function type(){
 current=text[i];
